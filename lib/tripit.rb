@@ -32,7 +32,7 @@ require 'date'
 def self.urlencode(str)
     str = str.to_s
     str.gsub(/[^a-zA-Z0-9_\.\-\~]/n) do |s|
-        sprintf('%%%02X', s[0])
+        sprintf('%%%02X', s.ord)
     end
 end
 
