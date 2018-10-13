@@ -315,7 +315,7 @@ class API
     # Gets an object by ID, or in the case of trips, with an optional filter
     def get
         @get ||= Verb.new do |verb|
-            verb.entity :air, :lodging, :car, :rail, :transport, \
+            verb.entity :air, :lodging, :car, :parking, :rail, :transport, \
                 :cruise, :restaurant, :activity, :note, :map, :directions, \
                 :points_program \
             do |entity, id|
@@ -341,7 +341,7 @@ class API
     # Deletes an object by ID
     def delete
         @delete ||= Verb.new do |verb|
-            verb.entity :trip, :air, :lodging, :car, :profile, :rail, \
+            verb.entity :trip, :air, :lodging, :car, :parking, :profile, :rail, \
                 :transport, :cruise, :restaurant, :activity, :note, :map, \
                 :directions \
             do |entity, id|
@@ -361,7 +361,7 @@ class API
     # Equivalent to a delete and a create, but they happen atomically.
     def replace
         @replace ||= Verb.new do |verb|
-            verb.entity :trip, :air, :lodging, :car, :profile, :rail, \
+            verb.entity :trip, :air, :lodging, :car, :parking, :profile, :rail, \
                 :transport, :cruise, :restaurant, :activity, :note, :map, \
                 :directions \
             do |entity, id, obj|
